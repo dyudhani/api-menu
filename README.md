@@ -20,6 +20,21 @@ This project uses environment variables to configure the application. Below is a
 * `MENU_ONE`, `MENU_TWO`, `MENU_THREE`: These are the default menu items that the application will use.
 
 
+### Docker
+```bash
+docker build . -t <image-name:tag>
+docker push <image-name:tag>
+docker pull <image-name:tag>
+```
+
+This application is configured to be run using Docker Compose. This makes it easy to manage the application and its dependencies with just a few commands.
+
+To start the application with Docker Compose, make sure you have Docker installed on your machine, then run:
+
+```bash
+docker-compose --env-file .env up -d
+```
+
 To start the server please run:
 ```bash
 npm install

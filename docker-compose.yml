@@ -1,0 +1,35 @@
+version: "3.4"
+services:
+  app:
+    container_name: menu-api
+    image: docker.io/dyudhani/api-menu:latest
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 3456:3456
+    networks:
+      - menu-api-network
+    depends_on:
+      - db
+  db:
+    container_name: db-menu-api
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - 5432:5432
+    networks:
+      - menu-api-network
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+networks:
+  menu-api-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
