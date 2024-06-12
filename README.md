@@ -2,6 +2,11 @@
 
 This is the repository for service menu API. In this project we can buy some food on the menu. The project uses express js and uses sequelize as an ORM with a postresql database. The default port in this server will be `3456` and the host is `localhost`. 
 
+To use the environment variable, copy the `.env.example` like below :
+```bash
+cp .env.example .env
+```
+
 This project uses environment variables to configure the application. Below is a description of each variable:
 * `PORT`: The port number where the server will listen for requests. Default is 3456.
 
@@ -19,6 +24,17 @@ This project uses environment variables to configure the application. Below is a
 
 * `MENU_ONE`, `MENU_TWO`, `MENU_THREE`: These are the default menu items that the application will use.
 
+To start the server please run :
+```bash
+npm install
+npm run dev
+```
+
+Before starting the project, first run migrate and seed :
+```bash
+npx sequelize db:migrate
+npx sequelize db:seed:all
+```
 
 ### Docker
 ```bash
@@ -33,17 +49,5 @@ To start the application with Docker Compose, make sure you have Docker installe
 
 ```bash
 docker-compose --env-file .env up -d
-```
-
-To start the server please run:
-```bash
-npm install
-npm run dev
-```
-
-Before starting the project, first run migrate and seed:
-```bash
-npx sequelize db:migrate
-npx sequelize db:seed:all
 ```
 #### Documentation API : https://www.postman.com/belegasquad/workspace/api-menu-food
