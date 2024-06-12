@@ -1,6 +1,6 @@
 ## Rest API Menu
 
-This is the repository for service menu API. In this project we can buy some food on the menu. The project uses express js and uses sequelize as an ORM with a postresql database. The default port in this server will be `5432` and the host is `localhost`. 
+This is the repository for service menu API. In this project we can buy some food on the menu. The project uses express js and uses sequelize as an ORM with a postresql database. The default port in this server will be `3456` and the host is `localhost`. 
 
 This project uses environment variables to configure the application. Below is a description of each variable:
 * `PORT`: The port number where the server will listen for requests. Default is 3456.
