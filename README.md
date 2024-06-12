@@ -8,5 +8,11 @@ npm install
 npm run dev
 ```
 
+Before starting the project, first run migrate and seed:
+```bash
+npx sequelize db:migrate
+npx sequelize db:seed:all
+```
+
 #### Docker Image : 
 #### Documentation API : https://www.postman.com/belegasquad/workspace/api-menu-food
